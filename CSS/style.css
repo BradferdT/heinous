@@ -1,0 +1,99 @@
+body{
+  background-color: rgb(55,71,79);
+}
+
+.row .col.s12 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    padding: 0px;
+    right: auto;
+}
+.container-fluid{
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+
+}
+
+.logo{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
+  margin-left: 15px;
+}
+
+.displayNewRow_height{
+  text-align: center;
+  height: 30%;
+}
+
+.displayNewCol_height{
+  height: 100%;
+}
+
+.bannerImg{
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+}
+.desc{
+  text-align: center;
+}
+
+.text_desc{
+  color: white;
+  font-weight: bold;
+}
+
+.random_vid_height{
+  height: 40%;
+  text-align: center;
+  padding: 0;
+}
+
+.vid_height{
+  height: 40%;
+}
+
+.vid_size{
+  height: 100%;
+}
+
+
+.form_volume{
+  width: 30%;
+  border: thin solid lightgray;
+  padding: 10px;
+}
+
+.setting_row{
+  padding: 22px;
+}
+
+#volume{
+  width: 90%;
+}
+
+.nav-mobile ul:hover{
+  transition: 3s;
+  background-color: rgb(30,136,229);
+}
+
+@media (min-width: 500px){
+  .vid_size{
+    height: 220%;
+  }
+}
+
+
+@media (min-width: 1000px){
+  .vid_size{
+    height: 260%;
+  }
+}
+
+@media (min-width: 1500px){
+  .vid_size{
+    height: 320%;
+  }
+}
