@@ -180,7 +180,7 @@ var videos = {
 {"src": "Files/adl.webm", "description": "ADL", "poster": ""},
 {"src": "Files/whatAreYouRetardedAsexual.webm", "description": "Are You a Retard", "poster": ""},
 {"src": "Files/thatsNicewewe.webm", "description": "That's Nice", "poster": ""},
-{"src": "Files/elsaJapanese.webm", "description": "Japanse Frozen", "poster": ""},
+{"src": "Files/elsaJapanese.webm", "description": "Live Action Frozen", "poster": ""},
 {"src": "Files/whatIsGoinOn.webm", "description": "Wat", "poster": ""},
 {"src": "Files/nonBeleiver.webm", "description": "Non Beleiver", "poster": ""},
 {"src": "Files/heCanFly.webm", "description": "He Can Fly", "poster": ""},

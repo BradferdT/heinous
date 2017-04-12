@@ -2,13 +2,6 @@ body{
   background-color: rgb(55,71,79);
 }
 
-.row .col.s12 {
-    width: 100%;
-    margin-left: auto;
-    left: auto;
-    padding: 0px;
-    right: auto;
-}
 .container-fluid{
   height: 100vh;
   width: 100vw;
@@ -57,5 +50,5 @@ dd{
 .emailAd{
   color: rgb(230,126,34);
   font-weight: bold;
-  font-size: 25px; 
+  font-size: 25px;
 }
