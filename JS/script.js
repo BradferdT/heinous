@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var main_vid_cur = 0;
-  announcementMsg();
+  //announcementMsg();
   welcomeMsg();
   generalSettings();
   themeSet();
@@ -13,28 +13,47 @@ $(document).ready(function(){
   }
 
   $('.prev_vid').click(function(){
-    main_vid_cur -= 1;
-    $('.main_vid').attr('src', `${videos.data[main_vid_cur].src}`);
-    $('.text_desc').html(`${videos.data[main_vid_cur].description}`);
-    encodeURI();
+      if(main_vid_cur - 1 < 0){
+        main_vid_cur = videos.data.length - 1;
+      }else{
+        main_vid_cur -= 1;
+      }
+      $('.main_vid').attr('src', `${videos.data[main_vid_cur].src}`);
+      $('.text_desc').html(`${videos.data[main_vid_cur].description}`);
+      encodeURI();
   });
 
   $('.next_vid').click(function(){
-    main_vid_cur += 1;
-    $('.main_vid').attr('src', `${videos.data[main_vid_cur].src}`);
-    $('.text_desc').html(`${videos.data[main_vid_cur].description}`);
-    encodeURI();
+      if(main_vid_cur + 1 > videos.data.length - 1){
+        main_vid_cur = 0;
+      }else{
+        main_vid_cur += 1;
+      }
+      $('.main_vid').attr('src', `${videos.data[main_vid_cur].src}`);
+      $('.text_desc').html(`${videos.data[main_vid_cur].description}`);
+      encodeURI();
   });
 
   $('.shuffle_list').click(function(){
     shuffle(videos.data);
+    Materialize.toast('Videos Shuffled', 3000, 'rounded')
+  })
+
+  $('.loop_list').click(function(){
+    if($('.main_vid').prop('loop') == false){
+      Materialize.toast('Loop Enabled', 3000, 'rounded')
+      $('.main_vid').prop('loop', true);
+    }else if($('.main_vid').prop('loop') == true){
+      Materialize.toast('Loop Disabled', 3000, 'rounded')
+      $('.main_vid').prop('loop', false);
+    }
   })
 
   $('.main_vid').on('ended', function(){
     main_vid_cur += 1;
     $('.main_vid').attr('src', `${videos.data[main_vid_cur].src}`);
     if(videos.data[main_vid_cur].description != null){
-      $('.text_desc').html(`${videos.data[main_vid_cur].description}`);    
+      $('.text_desc').html(`${videos.data[main_vid_cur].description}`);
     }
     $('.main_vid').attr('autoplay', true);
     encodeURI();
@@ -59,7 +78,7 @@ $(document).ready(function(){
         return video;
       }
     })
-    $('.text_desc').html(selectI[0].description);
+      $('.text_desc').html(selectI[0].description);
   }
 
   function welcomeMsg(){
@@ -129,7 +148,14 @@ $(document).ready(function(){
     }
   }
 
-
+  //ToDo create a function to handle bounds of videos so logic all in one place.
+  function checkBounds(){
+    if(main_vid_cur + 1 > videos.data.length - 1 || main_vid_cur - 1 < 0){
+      return false;
+    }else{
+      return true;
+    }
+  }
 
 
 $('#videos_length').html(videos.data.length);
@@ -146,6 +172,16 @@ $('#videos_length').html(videos.data.length);
 
 var videos = {
   "data":[
+{"src": "Files/trumpAnime.webm", "description": "Make Anime Great Again", "poster": ""},
+{"src": "Files/gandalfIsCold.webm", "description": "Little Chilly", "poster": ""},
+{"src": "Files/pickItUP.webm", "description": "Bag Was Too Small", "poster": ""},
+{"src": "Files/manBaby.webm", "description": "Man Baby", "poster": ""},
+{"src": "Files/extraFoodStamps.webm", "description": "Payday", "poster": ""},
+{"src": "Files/adl.webm", "description": "ADL", "poster": ""},
+{"src": "Files/whatAreYouRetardedAsexual.webm", "description": "Are You a Retard", "poster": ""},
+{"src": "Files/thatsNicewewe.webm", "description": "That's Nice", "poster": ""},
+{"src": "Files/elsaJapanese.webm", "description": "Japanse Frozen", "poster": ""},
+{"src": "Files/whatIsGoinOn.webm", "description": "Wat", "poster": ""},
 {"src": "Files/nonBeleiver.webm", "description": "Non Beleiver", "poster": ""},
 {"src": "Files/heCanFly.webm", "description": "He Can Fly", "poster": ""},
 {"src": "Files/drStrangeDudu.webm", "description": "Dr Strange", "poster": ""},
