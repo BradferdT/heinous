@@ -1,9 +1,19 @@
 $(document).ready(function(){
+  //////////////////////////////////////////////////////
+  ///Current index of video
+  //////////////////////////////////////////////////////
   var main_vid_cur = 0;
+  //////////////////////////////////////////////////////
+  ///First load functions
+  //////////////////////////////////////////////////////
   //announcementMsg();
   welcomeMsg();
   generalSettings();
   themeSet();
+
+  //////////////////////////////////////////////////////
+  ///Check url for queries
+  //////////////////////////////////////////////////////
   if(window.location.href.indexOf('?') > 0){
     decodeURI();
   }else{
@@ -12,6 +22,9 @@ $(document).ready(function(){
     encodeURI();
   }
 
+  //////////////////////////////////////////////////////
+  ///event listener for previous button clicks.
+  //////////////////////////////////////////////////////
   $('.prev_vid').click(function(){
       if(main_vid_cur - 1 < 0){
         main_vid_cur = videos.data.length - 1;
@@ -23,6 +36,9 @@ $(document).ready(function(){
       encodeURI();
   });
 
+  //////////////////////////////////////////////////////
+  ///event listener for nex button clicks
+  //////////////////////////////////////////////////////
   $('.next_vid').click(function(){
       if(main_vid_cur + 1 > videos.data.length - 1){
         main_vid_cur = 0;
@@ -34,11 +50,17 @@ $(document).ready(function(){
       encodeURI();
   });
 
+  //////////////////////////////////////////////////////
+  ///event listener for shuffle button click
+  //////////////////////////////////////////////////////
   $('.shuffle_list').click(function(){
     shuffle(videos.data);
     Materialize.toast('Videos Shuffled', 3000, 'rounded')
   })
 
+  //////////////////////////////////////////////////////
+  ///event listener for loop button click
+  //////////////////////////////////////////////////////
   $('.loop_list').click(function(){
     if($('.main_vid').prop('loop') == false){
       Materialize.toast('Loop Enabled', 3000, 'rounded')
@@ -49,6 +71,9 @@ $(document).ready(function(){
     }
   })
 
+  //////////////////////////////////////////////////////
+  ///event listener waiting for video prop on end to trigger auto play
+  //////////////////////////////////////////////////////
   $('.main_vid').on('ended', function(){
     main_vid_cur += 1;
     $('.main_vid').attr('src', `${videos.data[main_vid_cur].src}`);
@@ -59,15 +84,24 @@ $(document).ready(function(){
     encodeURI();
   });
 
+  //////////////////////////////////////////////////////
+  ///NOT OPPERATING option for click events on the title for videos
+  //////////////////////////////////////////////////////
   $('.text_desc').click(function(){
   });
 
+  //////////////////////////////////////////////////////
+  ///function using method encodeURIComponent takes video src and encodes it
+  //////////////////////////////////////////////////////
   function encodeURI(){
     var url = window.location.href;
     var src = encodeURIComponent(`${videos.data[main_vid_cur].src}`);
     history.pushState('', '', `?${src}`);
   }
 
+  //////////////////////////////////////////////////////
+  ///function using method decodeURIComponent takes query and looks for a match ///in videos.data if there is then we change video src to the query.
+  //////////////////////////////////////////////////////
   function decodeURI(){
     var url = window.location.href;
     var res = url.split('?')[1];
@@ -81,6 +115,9 @@ $(document).ready(function(){
       $('.text_desc').html(selectI[0].description);
   }
 
+  //////////////////////////////////////////////////////
+  ///function that checks users first visit if true then we will display a ///warning message
+  //////////////////////////////////////////////////////
   function welcomeMsg(){
     if(localStorage.getItem('agree') == null){
       localStorage.setItem('agree', 'true');
@@ -89,12 +126,20 @@ $(document).ready(function(){
       $('#welcome').modal('open');
     }
   }
+
+  //////////////////////////////////////////////////////
+  ///function that sets up general settings for users.
+  //////////////////////////////////////////////////////
   function generalSettings(){
     if(localStorage.getItem('volume') == null){
       localStorage.setItem('volume', '1.0');
     }
     $('.main_vid').prop('volume', localStorage.getItem('volume'));
   }
+
+  //////////////////////////////////////////////////////
+  ///function that sets user up with dark theme and handles changes to themes.
+  //////////////////////////////////////////////////////
   function themeSet(){
     if(localStorage.getItem('theme') == null){
       localStorage.setItem('theme', 'dark');
@@ -128,6 +173,11 @@ $(document).ready(function(){
       $('ul').css('color', 'white');
     }
   }
+
+  //////////////////////////////////////////////////////
+  ///function that is called when shuffle_list is triggered, working on my own
+  /// as this was a solution on stackoverflow.
+  //////////////////////////////////////////////////////
   function shuffle(array){
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
@@ -139,6 +189,10 @@ $(document).ready(function(){
   }
     return array;
 }
+
+  //////////////////////////////////////////////////////
+  ///function that will be used for displaying announcement modals.
+  //////////////////////////////////////////////////////
   function announcementMsg(){
     if(localStorage.getItem('agree') != null && localStorage.getItem('update1') == null){
       localStorage.setItem('update1', 'true');
@@ -148,7 +202,10 @@ $(document).ready(function(){
     }
   }
 
-  //ToDo create a function to handle bounds of videos so logic all in one place.
+  //////////////////////////////////////////////////////
+  ///Function that will handle bounds for curr_vid index so it does not
+  ///go over or under
+  //////////////////////////////////////////////////////
   function checkBounds(){
     if(main_vid_cur + 1 > videos.data.length - 1 || main_vid_cur - 1 < 0){
       return false;
@@ -169,7 +226,9 @@ $('#videos_length').html(videos.data.length);
 
 
 
-
+//////////////////////////////////////////////////////
+///Videos object
+//////////////////////////////////////////////////////
 var videos = {
   "data":[
 {"src": "Files/trumpAnime.webm", "description": "Make Anime Great Again", "poster": ""},
