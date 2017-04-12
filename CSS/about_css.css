@@ -55,3 +55,8 @@ dd{
   font-weight: bold;
   font-size: 25px;
 }
+
+nav ul li a:hover{
+  transition: 1s linear;
+  background-color: rgba(158, 158, 158,1.0);
+}
