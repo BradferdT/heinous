@@ -75,13 +75,12 @@ body{
 }
 
 nav ul li a:hover{
-  border-top-style: solid;
-  border-style: thin;
-  border-color: transparent;
+  transition: 1s linear;
+  background-color: rgba(158, 158, 158,1.0);
 }
 
 .welcomeP{
-  color: black;
+  color: black !important;
 }
 
 @media (min-width: 500px){
