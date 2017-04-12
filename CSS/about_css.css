@@ -6,7 +6,10 @@ body{
   height: 100vh;
   width: 100vw;
   padding: 0;
+}
 
+.row .col.s12{
+  padding: 0;
 }
 
 .logo{
