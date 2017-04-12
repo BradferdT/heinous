@@ -146,7 +146,7 @@ $(document).ready(function(){
     }
     if(localStorage.getItem('theme') == 'light') {
       $('.bannerImg').fadeIn('slow', function(){
-          $('.bannerImg').attr('src', 'lightBanner.png');
+          $('.bannerImg').attr('src', 'Files/lightBanner.png');
       })
       $('.menu').removeClass('black darken-3');
       $('.menu').addClass('grey lighten-5');
@@ -160,7 +160,7 @@ $(document).ready(function(){
     }
     if(localStorage.getItem('theme') == 'dark'){
       $('.bannerImg').fadeIn('slow', function(){
-          $('.bannerImg').attr('src', 'darkBanner.png');
+          $('.bannerImg').attr('src', 'Files/darkBanner.png');
       })
       $('.menu').removeClass('grey lighten-5');
       $('.menu').addClass('black darken-3');
