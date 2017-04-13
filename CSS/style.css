@@ -84,12 +84,6 @@ nav ul li a:hover{
 }
 
 
-@media (min-width: 250px){
-  .vid_size{
-    height: 150%;
-  }
-}
-
 @media (min-width: 500px){
   .vid_size{
     height: 220%;

@@ -6,7 +6,7 @@ $(document).ready(function(){
   //////////////////////////////////////////////////////
   ///First load functions
   //////////////////////////////////////////////////////
-  //announcementMsg();
+  announcementMsg();
   welcomeMsg();
   generalSettings();
   themeSet();
@@ -194,7 +194,7 @@ $(document).ready(function(){
   ///function that will be used for displaying announcement modals.
   //////////////////////////////////////////////////////
   function announcementMsg(){
-    if(localStorage.getItem('agree') != null && localStorage.getItem('update1') == null){
+    if(localStorage.getItem('update1') == null){
       localStorage.setItem('update1', 'true');
       $('.container-fluid').append('<div>');
       $('.modal').modal();
