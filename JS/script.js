@@ -231,6 +231,19 @@ $('#videos_length').html(videos.data.length);
 //////////////////////////////////////////////////////
 var videos = {
   "data":[
+{"src": "Files/ohGodAnime.webm", "description": "", "poster": ""},
+{"src": "Files/americanHouse.webm", "description": "American Households", "poster": ""},
+{"src": "Files/justDoIt.webm", "description": "Do It", "poster": ""},
+{"src": "Files/watchTheLight.webm", "description": "God Damnit Kevin", "poster": ""},
+{"src": "Files/pipeHitten.webm", "description": "Pipe Hitten", "poster": ""},
+{"src": "Files/dogeIsBroken.webm", "description": "Broken Doge", "poster": ""},
+{"src": "Files/arabianNights.webm", "description": "Arabian Nights", "poster": ""},
+{"src": "Files/iAmAGrenade.webm", "description": "Ur a What?", "poster": ""},
+{"src": "Files/fuckingGoofy.webm", "description": "Fucking Goofy", "poster": ""},
+{"src": "Files/talentedArtist.webm", "description": "Talent", "poster": ""},
+{"src": "Files/emergencySurgery.webm", "description": "Emergency Surgeries", "poster": ""},
+{"src": "Files/bigFan.webm", "description": "Technique", "poster": ""},
+{"src": "Files/methane.webm", "description": "Methane", "poster": ""},
 {"src": "Files/trumpAnime.webm", "description": "Make Anime Great Again", "poster": ""},
 {"src": "Files/gandalfIsCold.webm", "description": "Little Chilly", "poster": ""},
 {"src": "Files/pickItUP.webm", "description": "Bag Was Too Small", "poster": ""},
