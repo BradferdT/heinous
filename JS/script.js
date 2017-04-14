@@ -6,7 +6,7 @@ $(document).ready(function(){
   //////////////////////////////////////////////////////
   ///First load functions
   //////////////////////////////////////////////////////
-  announcementMsg();
+  //announcementMsg();
   welcomeMsg();
   generalSettings();
   themeSet();
@@ -231,6 +231,7 @@ $('#videos_length').html(videos.data.length);
 //////////////////////////////////////////////////////
 var videos = {
   "data":[
+{"src": "Files/engineCoon.webm", "description": "Engine Coon", "poster": ""},
 {"src": "Files/holySheetDude.webm", "description": "Holy Shit Dud", "poster": ""},
 {"src": "Files/solarSystem.webm", "description": "Spot On", "poster": ""},
 {"src": "Files/masterTheif.webm", "description": "Master Theif", "poster": ""},
