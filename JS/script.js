@@ -231,12 +231,12 @@ $('#videos_length').html(videos.data.length);
 //////////////////////////////////////////////////////
 var videos = {
   "data":[
-{"src": "Files/holySheetDude", "description": "Holy Shit Dud", "poster": ""},
-{"src": "Files/solarSystem", "description": "Spot On", "poster": ""},
-{"src": "Files/masterTheif", "description": "Master Theif", "poster": ""},
-{"src": "Files/justLikeAGame", "description": "Just Like A Game", "poster": ""},
-{"src": "Files/drinkMyOwnUrine", "description": "Drink My Own Urine", "poster": ""},
-{"src": "Files/safeDefense", "description": "Safe Defense", "poster": ""},
+{"src": "Files/holySheetDude.webm", "description": "Holy Shit Dud", "poster": ""},
+{"src": "Files/solarSystem.webm", "description": "Spot On", "poster": ""},
+{"src": "Files/masterTheif.webm", "description": "Master Theif", "poster": ""},
+{"src": "Files/justLikeAGame.webm", "description": "Just Like A Game", "poster": ""},
+{"src": "Files/drinkMyOwnUrine.webm", "description": "Drink My Own Urine", "poster": ""},
+{"src": "Files/safeDefense.webm", "description": "Safe Defense", "poster": ""},
 {"src": "Files/ohGodAnime.webm", "description": "Oh Jesus", "poster": ""},
 {"src": "Files/americanHouse.webm", "description": "American Households", "poster": ""},
 {"src": "Files/justDoIt.webm", "description": "Do It", "poster": ""},
